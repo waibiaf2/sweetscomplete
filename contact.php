@@ -1,7 +1,9 @@
+<?php //some code ?>
 <!DOCTYPE HTML>
+<!-- this file has the overall look and feel of the website -->
 <html>
 <head>
-<title>Sweets Complete | Detail</title>
+<title>Sweets Complete | Contact</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name ="description" content ="Sweets Complete">
 <meta name="keywords" content="">
@@ -26,49 +28,52 @@
 		<li><a href="home.html">Home</a></li>
 		<li><a href="about.html">About Us</a></li>
 		<li><a href="products.html">Products</a></li>
-		<li><a href="contact.html">Contact Us</a></li>
+		<li><a href="specials.html">Specials</a></li>
 		</ul>
 		<br>
 		<div class="banner"><p></p></div>
 		<br class="clear"/>
 	</div> <!-- header -->
 		
-	<div class="content">	
+	<div class="content">
 	<br/>
 	<div class="product-list">
-		<h2>Product Details</h2>
+		
+		<h2>Sign Up</h2>
 		<br/>
-		<div class="images">
-			<a href="#">
-				<img src="images/430_3150132.scale_20.JPG" alt=" Chocolate Angelfood Cupcakes" width="350" />
-			</a>
-		</div>
-		<div class="details">
-			<h3>SKU:  C3000</h3><br/>
-			<h1 class="name"><b> Chocolate Angelfood Cupcakes</b></h1><br/>
-			<p class="desc">Id ius detracto constituam, his possit platonem ne. Mel ad dolorum vivendum, vocent iisque salutandi in sit, nobis omnes eum ut. Nam simul tincidunt ei, in viris fabulas eos. Te per animal impetus, prompta platonem eloquentiam ea usu, efficiendi appellantur has in.
-			</p>
-			<br/>
-			<p class="view"><b>Price: £0.30</b></p><br/>
-			<form action="purchase.html" method="POST">
-			<p class="view">
-				<label>Qty:</label> <input type="text" value="1" name="qty" class="s0" size="2" />
-				<input type="submit" name="purchase" value="Buy this item" class="button"/>
-				<input type="hidden" name="price" value="0.30" />
-				<input type="hidden" name="productID" value="3" />
-			</p>
-			</form>
-		</div>
+		
+		<b>Please use this form to contact us.</b><br/><br/>
+		<form>
+			<p>
+				<label>Name: </label>
+				<input type="text" name="name"/>
+			<p>
+			<p>
+				<label>Email Address: </label>
+				<input type="text" name="email"/>
+			<p>
+			<p>
+				<label>Comments / Questions: </label>
+				<textarea name="comments">I love your products!</textarea>
+			<p>
+			<p>
+				<input type="reset" name="clear" value="Clear" class="button"/>
+				<input type="submit" name="submit" value="Submit" class="button marL10"/>
+			<p>
+		</form>
 	</div><!-- product-list -->
+
 <br class="clear-all"/>
 </div><!-- content -->
+
+</div><!-- maincontent -->
 	
 	</div><!-- maincontent -->
 
 	<div id="footer">
 		<div class="footer">
 			Copyright &copy; 2012 sweetscomplete.com. All rights reserved. <br/>
-		<a href="home.html">Home</a> | <a href="about.html">About Us</a> | <a href="products.html">Products</a> | <a href="contact.html">Contact Us</a> 		<br />
+		<a href="home.html">Home</a> | <a href="about.html">About Us</a> | <a href="products.html">Products</a> | <a href="specials.html">Specials</a> 		<br />
 			<span class="contact">Tel: +44-1234567890&nbsp;
 			Fax: +44-1234567891&nbsp;
 			Email:sales@sweetscomplete.com</span>

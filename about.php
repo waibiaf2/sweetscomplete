@@ -1,7 +1,9 @@
+<?php //some code ?>
 <!DOCTYPE HTML>
+<!-- this file has the overall look and feel of the website -->
 <html>
 <head>
-<title>Sweets Complete | Home</title>
+<title>Sweets Complete | About</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name ="description" content ="Sweets Complete">
 <meta name="keywords" content="">
@@ -10,7 +12,8 @@
 </head>
 <body>
 <div id="wrapper">
-	<div id="maincontent">		
+	<div id="maincontent">
+		
 	<div id="header">
 		<div id="logo" class="left">
 			<a href="index.php"><img src="images/logo.png" alt="SweetsComplete.Com"/></a>
@@ -19,12 +22,13 @@
 			<b>
 			<a href="login.html" >Login</a> |<a href="members.html" >Our Members</a> |<a href="cart.html" >Shopping Cart</a>
 			</b>
-		</div>
+			<br />
+			Welcome Guest		</div>
 		<ul class="topmenu">
-		<li><a href="about.html">About Us</a></li>
-		<li><a href="products.html">Products</a></li>
-		<li><a href="specials.html">Specials</a></li>
-		<li><a href="contact.html">Contact Us</a></li>
+		<li><a href="home.html" >Home</a></li>
+		<li><a href="products.html" >Products</a></li>
+		<li><a href="specials.html" >Specials</a></li>
+		<li><a href="contact.html" >Contact Us</a></li>
 		</ul>
 		<br>
 		<div class="banner"><p></p></div>
@@ -32,7 +36,7 @@
 	</div> <!-- header -->
 		
 	<div class="content">
-	
+
 	<div class="search left">
 		<form name="search" method="get" action="search.html" id="search">
 			<input type="text" value="keywords" name="keyword" class="s0" />
@@ -45,58 +49,55 @@
 		</form>
 		<br /><br />
 	</div>
-	
 	<div class="intro left">
 	  <h3>About Us</h3><br/>
 	  <p>Lorem ipsum dolor sit amet consectetuer. Lorem ipsum dolor sit amet consectetuer, Lorem ipsum dolor sit amet consectetuer
 	  Lorem ipsum dolor sit amet consectetuer. Lorem ipsum dolor sit amet consectetuer. Lorem ipsum dolor sit amet consectetuer.
-	  <a href="about.html">Read More</a>
 	  </p>
 	</div>
 	<br class="clear"/>
 	<br/>
-		
-	<div class="product-list">
-		<h2>Some Specials</h2>
-		
-		<ul class="specials">
-				<li>
-					<div class="image">
-						<a href="detail.html">
-						<img src="images/430_3150132.scale_20.JPG" alt=" Chocolate Angelfood Cupcakes" width="190" height="130"/>
-						</a>
-					</div>
-					<div class="detail">
-						<p class="name"><a href="detail.html"> Chocolate Angelfood Cupcakes</a></p>
-						<p class="view"><a href="detail.html">purchase</a> | <a href="detail.html">view details >></a></p>
-					</div>
-				</li>
-				<li>
-					<div class="image">
-						<a href="detail.html">
-						<img src="images/167_2835774.scale_20.JPG" alt=" Fruit Salad" width="190" height="130"/>
-						</a>
-					</div>
-					<div class="detail">
-						<p class="name"><a href="detail.html"> Fruit Salad</a></p>
-						<p class="view"><a href="detail.html">purchase</a> | <a href="detail.html">view details >></a></p>
-					</div>
-				</li>
-				<li>
-					<div class="image">
-						<a href="detail.html">
-						<img src="images/95_2542284.scale_20.JPG" alt=" Fudge" width="190" height="130"/>
-						</a>
-					</div>
-					<div class="detail">
-						<p class="name"><a href="detail.html"> Fudge</a></p>
-						<p class="view"><a href="detail.html">purchase</a> | <a href="detail.html">view details >></a></p>
-					</div>
-				</li>
-			</ul>
-	</div><!-- product-list -->
 	
-	<br class="clear-all"/>
+	<div class="product-list">
+	<table>
+ 	  <tr>
+		<td width="50%">
+		<p>
+		Suspendisse potenti. Donec commodo hendrerit arcu, vitae laoreet tortor scelerisque vestibulum. Nulla sem magna, aliquet quis semper vitae, 
+		semper vel ligula. Proin condimentum tellus mattis leo varius dictum. In ornare iaculis enim. Donec sed tortor massa. Vivamus neque nulla, 
+		sagittis nec facilisis id, porta ut nisl. Praesent ultricies leo dignissim sem sollicitudin dictum. Nullam ultricies augue iaculis mi 
+		placerat adipiscing. Nullam pulvinar sem vel nibh egestas mollis. Fusce venenatis sodales velit, sit amet mollis diam vehicula at. 
+		Fusce posuere lobortis arcu, nec mattis risus hendrerit non. Aenean luctus vestibulum eros eget lobortis. Proin nunc lorem, molestie ut 
+		pulvinar a, ullamcorper non tortor. Proin ultrices justo quis lectus posuere convallis in eu elit.
+		</p>
+		</td>
+		<td width="50%">
+		<img src="images/185_2577502.scale_20.JPG" width="360" height="240" />
+		</td>
+	  </tr>
+	  <tr>
+		<td width="50%">
+		<img src="images/735_3633807.scale_20.JPG" width="360" height="240" />
+		</td>
+		<td width="50%">
+		<p>
+		Aliquam a dui ut ligula iaculis dictum a eget dui. Suspendisse potenti. Pellentesque in elit laoreet risus tristique fermentum vel eget augue. 
+		Sed id lacus ut ligula lacinia mattis. Aliquam eget blandit erat. Donec pretium tincidunt gravida. Praesent tincidunt imperdiet massa 
+		convallis varius. Mauris a sollicitudin turpis. Cras nibh orci, commodo id cursus sed, facilisis sit amet dui. Sed quis ligula luctus 
+		lacus aliquam imperdiet et et erat. Nunc eget augue quis lorem egestas mattis. Sed fermentum urna a tortor condimentum ac pellentesque 
+		est euismod. Aliquam erat volutpat. Sed semper scelerisque lobortis.
+		</p>
+		<p>
+		Nam dolor arcu, sagittis sed molestie nec, cursus ut magna. Aenean euismod pellentesque massa ac auctor. Proin id hendrerit magna. 
+		Etiam auctor hendrerit mollis. Fusce nec diam ut elit tempus semper. Phasellus dictum nibh nec tortor vestibulum egestas. In et mauris 
+		dui. Donec dapibus massa ac tortor placerat nec placerat augue consectetur.
+		</p>
+		</td>
+	  </tr>
+	</table>
+	</div><!-- product-list -->
+
+<br class="clear-all"/>
 </div><!-- content -->
 	
 	</div><!-- maincontent -->
@@ -104,7 +105,7 @@
 	<div id="footer">
 		<div class="footer">
 			Copyright &copy; 2012 sweetscomplete.com. All rights reserved. <br/>
-		<a href="about.html">About Us</a> | <a href="products.html">Products</a> | <a href="specials.html">Specials</a> | <a href="contact.html">Contact Us</a> 		<br />
+		<a href="home.html" >Home</a> | <a href="products.html" >Products</a> | <a href="specials.html" >Specials</a> | <a href="contact.html" >Contact Us</a> 		<br />
 			<span class="contact">Tel: +44-1234567890&nbsp;
 			Fax: +44-1234567891&nbsp;
 			Email:sales@sweetscomplete.com</span>
@@ -115,3 +116,4 @@
 
 </body>
 </html>
+

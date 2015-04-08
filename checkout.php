@@ -1,7 +1,8 @@
+<?php //some code ?>
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Sweets Complete | Cart</title>
+<title>Sweets Complete | Checkout</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name ="description" content ="Sweets Complete">
 <meta name="keywords" content="">
@@ -74,8 +75,8 @@
 				</td>
 				<td> Boston Cream Pie</td>
 				<td>Qty: <br /><input type="text" value="2" name="qty[]" class="s0" size="2" /></td>
-				<td align="right">    5.90</td>
-				<td align="right">   11.80</td>
+				<td>    5.90</td>
+				<td>   11.80</td>
 				<td>
 					<table>
 					<tr>
@@ -97,8 +98,8 @@
 				</td>
 				<td> Chocolate Fondue</td>
 				<td>Qty: <br /><input type="text" value="3" name="qty[]" class="s0" size="2" /></td>
-				<td align="right">    3.20</td>
-				<td align="right">    9.60</td>
+				<td>    3.20</td>
+				<td>    9.60</td>
 				<td>
 					<table>
 					<tr>
@@ -113,7 +114,7 @@
 				</td>
 			</tr>
 			<tr>
-				<th colspan="5">Products Total:</th>
+				<th colspan="5">Total:</th>
 				<th colspan="2">   23.30</th>
 			</tr>
 		</table>
@@ -122,8 +123,18 @@
 		
 		<p align="center">
 			<input type="submit" name="back" value="Back to Shopping" class="button"/>
-			<input type="submit" name="change" value="Update" class="button"/>
-			<input type="submit" name="checkout" value="Checkout" class="button"/>
+			<!-- PayPal Buy Now Button -->
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+			<input type="hidden" name="cmd" value="_s-xclick">
+			<input type="hidden" name="hosted_button_id" value="BUTTON_ID">
+			<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+			<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+			<input type="hidden" name="amount" value="23.30" />
+			<input type="hidden" name="shipping" value="2.33" />
+			<input type="hidden" name="tax" value="2.33" />
+			<input type="hidden" name="tax" value="2.33" />
+			<input type="hidden" name="return" value="thanks.html" />
+			</form>
 		<p>
 		</form>
 	</div>

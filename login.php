@@ -1,3 +1,4 @@
+<?php //some code ?>
 <!DOCTYPE HTML>
 <!-- this file has the overall look and feel of the website -->
 <html>

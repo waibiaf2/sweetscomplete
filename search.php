@@ -1,8 +1,8 @@
+<?php //some code ?>
 <!DOCTYPE HTML>
-<!-- this file has the overall look and feel of the website -->
 <html>
 <head>
-<title>Sweets Complete | About</title>
+<title>Sweets Complete | Search</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name ="description" content ="Sweets Complete">
 <meta name="keywords" content="">
@@ -24,10 +24,10 @@
 			<br />
 			Welcome Guest		</div>
 		<ul class="topmenu">
-		<li><a href="home.html" >Home</a></li>
-		<li><a href="products.html" >Products</a></li>
-		<li><a href="specials.html" >Specials</a></li>
-		<li><a href="contact.html" >Contact Us</a></li>
+		<li><a href="home.html">Home</a></li>
+		<li><a href="about.html">About Us</a></li>
+		<li><a href="specials.html">Specials</a></li>
+		<li><a href="contact.html">Contact Us</a></li>
 		</ul>
 		<br>
 		<div class="banner"><p></p></div>
@@ -36,7 +36,9 @@
 		
 	<div class="content">
 
-	<div class="search left">
+<div id="leftnav">
+	<div class="search">
+
 		<form name="search" method="get" action="search.html" id="search">
 			<input type="text" value="keywords" name="keyword" class="s0" />
 			<br />
@@ -47,54 +49,126 @@
 			<input type="hidden" name="page" value="search" />
 		</form>
 		<br /><br />
+		
+		<h3>About Us</h3><br/>
+		<p class="width180">Lorem ipsum dolor sit amet consectetuer. Lorem ipsum dolor sit amet consectetuer, Lorem ipsum dolor sit amet consectetuer
+	  Lorem ipsum dolor sit amet consectetuer. Lorem ipsum dolor sit amet consectetuer. Lorem ipsum dolor sit amet consectetuer.  <a href="about.html">Read More >> </a></p>
 	</div>
-	<div class="intro left">
-	  <h3>About Us</h3><br/>
-	  <p>Lorem ipsum dolor sit amet consectetuer. Lorem ipsum dolor sit amet consectetuer, Lorem ipsum dolor sit amet consectetuer
-	  Lorem ipsum dolor sit amet consectetuer. Lorem ipsum dolor sit amet consectetuer. Lorem ipsum dolor sit amet consectetuer.
-	  </p>
-	</div>
-	<br class="clear"/>
-	<br/>
-	
+</div><!-- leftnav -->
+
+
+<div id="rightnav">
+
 	<div class="product-list">
-	<table>
- 	  <tr>
-		<td width="50%">
-		<p>
-		Suspendisse potenti. Donec commodo hendrerit arcu, vitae laoreet tortor scelerisque vestibulum. Nulla sem magna, aliquet quis semper vitae, 
-		semper vel ligula. Proin condimentum tellus mattis leo varius dictum. In ornare iaculis enim. Donec sed tortor massa. Vivamus neque nulla, 
-		sagittis nec facilisis id, porta ut nisl. Praesent ultricies leo dignissim sem sollicitudin dictum. Nullam ultricies augue iaculis mi 
-		placerat adipiscing. Nullam pulvinar sem vel nibh egestas mollis. Fusce venenatis sodales velit, sit amet mollis diam vehicula at. 
-		Fusce posuere lobortis arcu, nec mattis risus hendrerit non. Aenean luctus vestibulum eros eget lobortis. Proin nunc lorem, molestie ut 
-		pulvinar a, ullamcorper non tortor. Proin ultrices justo quis lectus posuere convallis in eu elit.
-		</p>
-		</td>
-		<td width="50%">
-		<img src="images/185_2577502.scale_20.JPG" width="360" height="240" />
-		</td>
-	  </tr>
-	  <tr>
-		<td width="50%">
-		<img src="images/735_3633807.scale_20.JPG" width="360" height="240" />
-		</td>
-		<td width="50%">
-		<p>
-		Aliquam a dui ut ligula iaculis dictum a eget dui. Suspendisse potenti. Pellentesque in elit laoreet risus tristique fermentum vel eget augue. 
-		Sed id lacus ut ligula lacinia mattis. Aliquam eget blandit erat. Donec pretium tincidunt gravida. Praesent tincidunt imperdiet massa 
-		convallis varius. Mauris a sollicitudin turpis. Cras nibh orci, commodo id cursus sed, facilisis sit amet dui. Sed quis ligula luctus 
-		lacus aliquam imperdiet et et erat. Nunc eget augue quis lorem egestas mattis. Sed fermentum urna a tortor condimentum ac pellentesque 
-		est euismod. Aliquam erat volutpat. Sed semper scelerisque lobortis.
-		</p>
-		<p>
-		Nam dolor arcu, sagittis sed molestie nec, cursus ut magna. Aenean euismod pellentesque massa ac auctor. Proin id hendrerit magna. 
-		Etiam auctor hendrerit mollis. Fusce nec diam ut elit tempus semper. Phasellus dictum nibh nec tortor vestibulum egestas. In et mauris 
-		dui. Donec dapibus massa ac tortor placerat nec placerat augue consectetur.
-		</p>
-		</td>
-	  </tr>
-	</table>
+		<h2>Our Products</h2>
+		<a class="pages" href="products.html">&lt;prev</a>
+		&nbsp;|&nbsp;
+		<a class="pages" href="products.html">next&gt;</a>
+			<ul>
+				<li>
+					<div class="image">
+						<a href="detail.html">
+						<img src="images/167_2835774.scale_20.JPG" alt=" Ambrosia Salad" width="190" height="130"/>
+						</a>
+					</div>
+					<div class="detail">
+						<p class="name"><a href="detail.html"> Ambrosia Salad</a></p>
+						<p class="view"><a href="detail.html">purchase</a> | <a href="detail.html">view details >></a></p>
+					</div>
+				</li>
+				<li>
+					<div class="image">
+						<a href="detail.html">
+						<img src="images/167_2835774.scale_20.JPG" alt=" Apple Pie a la Mode" width="190" height="130"/>
+						</a>
+					</div>
+					<div class="detail">
+						<p class="name"><a href="detail.html"> Apple Pie a la Mode</a></p>
+						<p class="view"><a href="detail.html">purchase</a> | <a href="detail.html">view details >></a></p>
+					</div>
+				</li>
+				<li>
+					<div class="image">
+						<a href="detail.html">
+						<img src="images/430_3151480.scale_20.JPG" alt=" Apple Turnover" width="190" height="130"/>
+						</a>
+					</div>
+					<div class="detail">
+						<p class="name"><a href="detail.html"> Apple Turnover</a></p>
+						<p class="view"><a href="detail.html">purchase</a> | <a href="detail.html">view details >></a></p>
+					</div>
+				</li>
+				<li>
+					<div class="image">
+						<a href="detail.html">
+						<img src="images/430_3150132.scale_20.JPG" alt=" Baked Alaska" width="190" height="130"/>
+						</a>
+					</div>
+					<div class="detail">
+						<p class="name"><a href="detail.html"> Baked Alaska</a></p>
+						<p class="view"><a href="detail.html">purchase</a> | <a href="detail.html">view details >></a></p>
+					</div>
+				</li>
+				<li>
+					<div class="image">
+						<a href="detail.html">
+						<img src="images/700_3473780.scale_20.JPG" alt=" Baklava" width="190" height="130"/>
+						</a>
+					</div>
+					<div class="detail">
+						<p class="name"><a href="detail.html"> Baklava</a></p>
+						<p class="view"><a href="detail.html">purchase</a> | <a href="detail.html">view details >></a></p>
+					</div>
+				</li>
+				<li>
+					<div class="image">
+						<a href="detail.html">
+						<img src="images/430_3151480.scale_20.JPG" alt=" Banana Bread" width="190" height="130"/>
+						</a>
+					</div>
+					<div class="detail">
+						<p class="name"><a href="detail.html"> Banana Bread</a></p>
+						<p class="view"><a href="detail.html">purchase</a> | <a href="detail.html">view details >></a></p>
+					</div>
+				</li>
+				<li>
+					<div class="image">
+						<a href="detail.html">
+						<img src="images/430_3150132.scale_20.JPG" alt=" Banana Pudding" width="190" height="130"/>
+						</a>
+					</div>
+					<div class="detail">
+						<p class="name"><a href="detail.html"> Banana Pudding</a></p>
+						<p class="view"><a href="detail.html">purchase</a> | <a href="detail.html">view details >></a></p>
+					</div>
+				</li>
+				<li>
+					<div class="image">
+						<a href="detail.html">
+						<img src="images/167_2835774.scale_20.JPG" alt=" Banana Split" width="190" height="130"/>
+						</a>
+					</div>
+					<div class="detail">
+						<p class="name"><a href="detail.html"> Banana Split</a></p>
+						<p class="view"><a href="detail.html">purchase</a> | <a href="detail.html">view details >></a></p>
+					</div>
+				</li>
+				<li>
+					<div class="image">
+						<a href="detail.html">
+						<img src="images/167_2835774.scale_20.JPG" alt=" Black Forest Cake" width="190" height="130"/>
+						</a>
+					</div>
+					<div class="detail">
+						<p class="name"><a href="detail.html"> Black Forest Cake</a></p>
+						<p class="view"><a href="detail.html">purchase</a> | <a href="detail.html">view details >></a></p>
+					</div>
+				</li>
+		</ul>
 	</div><!-- product-list -->
+	
+	
+</div><!-- rightnav -->
 
 <br class="clear-all"/>
 </div><!-- content -->
@@ -104,12 +178,12 @@
 	<div id="footer">
 		<div class="footer">
 			Copyright &copy; 2012 sweetscomplete.com. All rights reserved. <br/>
-		<a href="home.html" >Home</a> | <a href="products.html" >Products</a> | <a href="specials.html" >Specials</a> | <a href="contact.html" >Contact Us</a> 		<br />
+		<a href="home.html">Home</a> | <a href="about.html">About Us</a> | <a href="specials.html">Specials</a> | <a href="contact.html">Contact Us</a> 		<br />
 			<span class="contact">Tel: +44-1234567890&nbsp;
 			Fax: +44-1234567891&nbsp;
 			Email:sales@sweetscomplete.com</span>
 		</div>
-	</div><!-- footer -->
+	div><!-- footer -->
 	
 </div><!-- wrapper -->
 

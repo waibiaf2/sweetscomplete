@@ -1,3 +1,4 @@
+<?php //some code ?>
 <!DOCTYPE HTML>
 <html>
 <head>
