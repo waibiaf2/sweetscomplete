@@ -24,7 +24,7 @@
 		</div>
 		<ul class="topmenu">
 		<li><a href="about.html">About Us</a></li>
-		<li><a href="products.html">Products</a></li>
+		<li><a href="products.php">Products</a></li>
 		<li><a href="specials.html">Specials</a></li>
 		<li><a href="contact.html">Contact Us</a></li>
 		</ul>
