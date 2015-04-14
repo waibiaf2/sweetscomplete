@@ -2,6 +2,7 @@
 
 //Product titles
 $titles = array(
+    'Waibi Andrew',
     'AAA New Sweet',
 	'Fudge',
 	'Sugar Cookies',
