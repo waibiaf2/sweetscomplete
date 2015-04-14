@@ -1,149 +1,4 @@
-<?php
-
-//Product titles
-$titles = array(
-    'Waibi Andrew',
-    'AAA New Sweet',
-	'Fudge',
-	'Sugar Cookies',
-	'Chocolate Angelfood Cupcakes',
-	'Peanut Brittle',
-	'Toasted Marshmallows',
-	'Fruit Salad',
-	'Cheesecake',
-	'Glazed Doughnut',
-	'Fortune Cookies',
-	'Devils Food Cake',
-	'Peanut Butter Cups',
-	'Crispy Rice Treats',
-	'Cherry Pie',
-	'Apple Turnover',
-	'Napoleon',
-	'Chocolate Chip Cookies',
-	'Chocolate Soufflé',
-	'Walnut Brownies',
-	'Ambrosia Salad',
-	'Peach Cobbler',
-	'Chocolate Eclair',
-	'Chocolate Toaster Tarts',
-	'Candied Ginger',
-	'Spice Cake',
-	'Tapioca Pudding',
-	'Banana Pudding',
-	'Vanilla Cream Pie   ',
-	'Peanut Butter Cookies',
-	'Oatmeal Raisin Cookies',
-	'Chocolate Mousse',
-	'Baklava',
-	'Chocolate Fondue',
-	'Strawberry Shortcake',
-	'Apple Pie a la Mode',
-	'Neapolitan Ice Cream',
-	'Cinnamon Roll',
-	'Gingerbread Cookies',
-	'Gingerbread Dude',
-	'Bread Pudding   ',
-	'Coconut Custard Pie',
-	'Coconut Macaroon',
-	'Ice Cream Cone',
-	'Mint Chocolate Milk Shake',
-	'Pecan Pie',
-	'Smores',
-	'Black Forest Cake',
-	'Fruit Cake',
-	'Pumpkin Nut Bread',
-	'Pumpkin Pie',
-	'Pumpkin Ice Cream',
-	'Rhubarb Crumble',
-	'Carrot Cake',
-	'Ice Cream Cake',
-	'Baked Alaska',
-	'Ice Cream Sandwich',
-	'Hot Fudge Sundae',
-	'Pecan Praline Ice Cream',
-	'Banana Split',
-	'Boston Cream Pie',
-	'Banana Bread',
-	'Chocolate Layer Cake',
-	'Shortbread Cookies',
-	'Oreo Cookies',
-	'Pop Tarts',
-	
-);
-
-//Products details.
-
-$products = array(
-	array('id' => 01, 'title' => 'Fudge', 'link' => '95_2542284'),
-	array('id' => 02, 'title' => 'Sugar Cookies', 'link' => '167_2835774'),
-	array('id' => 03, 'title' => 'Chocolate Angelfood Cupcakes', 'link' => '430_3150132'),
-	array('id' => 04, 'title' => 'Peanut Brittle', 'link' => '700_3473780'),
-	array('id' => 05, 'title' => 'Toasted Marshmallows', 'link' => '167_2835774'),
-	array('id' => 06, 'title' => 'Fruit Salad', 'link' => '167_2835774'),
-	array('id' => 07, 'title' => 'Cheesecake', 'link' => '430_3151480'),
-	array('id' => 08, 'title' => 'Glazed Doughnut', 'link' => '167_2835774'),
-	array('id' => 09, 'title' => 'Fortune Cookies', 'link' => '167_2835774'),
-	array('id' => 10, 'title' => 'Devils Food Cake', 'link' => '430_3151480'),
-	array('id' => 11, 'title' => 'Peanut Butter Cups', 'link' => '326_2841738'),
-	array('id' => 12, 'title' => 'Crispy Rice Treats', 'link' => '326_2841738'),
-	array('id' => 13, 'title' => 'Cherry Pie', 'link' => '430_3151480'),
-	array('id' => 14, 'title' => 'Apple Turnover', 'link' => '430_3151480'),
-	array('id' => 15, 'title' => 'Napoleon', 'link' => '430_3151480'),
-	array('id' => 16, 'title' => 'Chocolate Chip Cookies', 'link' => '326_2841738'),
-	array('id' => 17, 'title' => 'Chocolate Soufflé', 'link' => '430_3150132'),
-	array('id' => 18, 'title' => 'Walnut Brownies', 'link' => '700_3473780'),
-	array('id' => 19, 'title' => 'Ambrosia Salad', 'link' => '167_2835774'),
-	array('id' => 20, 'title' => 'Peach Cobbler', 'link' => '430_3151480'),
-	array('id' => 21, 'title' => 'Chocolate Eclair', 'link' => '430_3150132'),
-	array('id' => 22, 'title' => 'Chocolate Toaster Tarts', 'link' => '95_2542284'),
-	array('id' => 23, 'title' => 'Candied Ginger', 'link' => '700_3473780'),
-	array('id' => 24, 'title' => 'Spice Cake', 'link' => '430_3151480'),
-	array('id' => 25, 'title' => 'Tapioca Pudding', 'link' => '430_3150132'),
-	array('id' => 26, 'title' => 'Banana Pudding', 'link' => '430_3150132'),
-	array('id' => 27, 'title' => 'Vanilla Cream Pie   ', 'link' => '430_3151480'),
-	array('id' => 28, 'title' => 'Peanut Butter Cookies', 'link' => '95_2542284'),
-	array('id' => 29, 'title' => 'Oatmeal Raisin Cookies', 'link' => '95_2542284'),
-	array('id' => 30, 'title' => 'Chocolate Mousse', 'link' => '430_3150132'),
-	array('id' => 31, 'title' => 'Baklava', 'link' => '700_3473780'),
-	array('id' => 32, 'title' => 'Chocolate Fondue', 'link' => '430_3150132'),
-	array('id' => 33, 'title' => 'Strawberry Shortcake', 'link' => '185_2577502'),
-	array('id' => 34, 'title' => 'Apple Pie a la Mode', 'link' => '167_2835774'),
-	array('id' => 35, 'title' => 'Neapolitan Ice Cream', 'link' => '185_2577502'),
-	array('id' => 36, 'title' => 'Cinnamon Roll', 'link' => '185_2577502'),
-	array('id' => 37, 'title' => 'Gingerbread Cookies', 'link' => '430_3151480'),
-	array('id' => 38, 'title' => 'Gingerbread Dude', 'link' => '430_3151480'),
-	array('id' => 39, 'title' => 'Bread Pudding   ', 'link' => '430_3151480'),
-	array('id' => 40, 'title' => 'Coconut Custard Pie', 'link' => '430_3151480'),
-	array('id' => 41, 'title' => 'Coconut Macaroon', 'link' => '326_2841738'),
-	array('id' => 42, 'title' => 'Ice Cream Cone', 'link' => '700_3473780'),
-	array('id' => 43, 'title' => 'Mint Chocolate Milk Shake', 'link' => '700_3473780'),
-	array('id' => 44, 'title' => 'Pecan Pie', 'link' => '185_2577502'),
-	array('id' => 45, 'title' => 'Smores', 'link' => '167_2835774'),
-	array('id' => 46, 'title' => 'Black Forest Cake', 'link' => '167_2835774'),
-	array('id' => 47, 'title' => 'Fruit Cake', 'link' => '326_2841738'),
-	array('id' => 48, 'title' => 'Pumpkin Nut Bread', 'link' => '430_3150132'),
-	array('id' => 49, 'title' => 'Pumpkin Pie', 'link' => '700_3473780'),
-	array('id' => 50, 'title' => 'Pumpkin Ice Cream', 'link' => '700_3473780'),
-	array('id' => 51, 'title' => 'Rhubarb Crumble', 'link' => '430_3151480'),
-	array('id' => 52, 'title' => 'Carrot Cake', 'link' => '167_2835774'),
-	array('id' => 53, 'title' => 'Ice Cream Cake', 'link' => '700_3473780'),
-	array('id' => 54, 'title' => 'Baked Alaska', 'link' => '430_3150132'),
-	array('id' => 55, 'title' => 'Ice Cream Sandwich', 'link' => '326_2841738'),
-	array('id' => 56, 'title' => 'Hot Fudge Sundae', 'link' => '430_3151480'),
-	array('id' => 57, 'title' => 'Pecan Praline Ice Cream', 'link' => '95_2542284'),
-	array('id' => 58, 'title' => 'Banana Split', 'link' => '167_2835774'),
-	array('id' => 59, 'title' => 'Boston Cream Pie', 'link' => '430_3151480'),
-	array('id' => 60, 'title' => 'Banana Bread', 'link' => '430_3151480'),
-	array('id' => 61, 'title' => 'Chocolate Layer Cake', 'link' => '326_2841738'),
-	array('id' => 62, 'title' => 'Shortbread Cookies', 'link' => '185_2577502'),
-	array('id' => 63, 'title' => 'Oreo Cookies', 'link' => '326_2841738'),
-	array('id' => 64, 'title' => 'Pop Tarts', 'link' => '430_3151480'),
-);
-
-$maxProducts = count($products);
-
-
-?>
+<?php //some code ?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -188,13 +43,7 @@ $maxProducts = count($products);
 			<input type="text" value="keywords" name="keyword" class="s0" />
 			<br />
 			<select name="title" class="s2">
-				<?php
-						sort($titles, SORT_STRING);
-						foreach($titles as $value){
-								printf('<option>%s</option>',$value);
-						}
-				?>
-			</select>
+			<option value="00000019"> Ambrosia Salad</option><option value="00000034"> Apple Pie a la Mode</option><option value="00000014"> Apple Turnover</option><option value="00000054"> Baked Alaska</option><option value="00000031"> Baklava</option><option value="00000060"> Banana Bread</option><option value="00000026"> Banana Pudding</option><option value="00000058"> Banana Split</option><option value="00000046"> Black Forest Cake</option><option value="00000059"> Boston Cream Pie</option><option value="00000039"> Bread Pudding   </option><option value="00000023"> Candied Ginger</option><option value="00000052"> Carrot Cake</option><option value="00000007"> Cheesecake</option><option value="00000013"> Cherry Pie</option><option value="00000003"> Chocolate Angelfood Cupcakes</option><option value="00000016"> Chocolate Chip Cookies</option><option value="00000021"> Chocolate Eclair</option><option value="00000032"> Chocolate Fondue</option><option value="00000061"> Chocolate Layer Cake</option><option value="00000030"> Chocolate Mousse</option><option value="00000017"> Chocolate Souffle</option><option value="00000022"> Chocolate Toaster Tarts</option><option value="00000036"> Cinnamon Roll</option><option value="00000040"> Coconut Custard Pie</option><option value="00000041"> Coconut Macaroon</option><option value="00000012"> Crispy Rice Treats</option><option value="00000010"> Devils Food Cake</option><option value="00000009"> Fortune Cookies</option><option value="00000047"> Fruit Cake</option><option value="00000006"> Fruit Salad</option><option value="00000001"> Fudge</option><option value="00000037"> Gingerbread Cookies</option><option value="00000038"> Gingerbread Dude</option><option value="00000008"> Glazed Doughnut</option><option value="00000056"> Hot Fudge Sundae</option><option value="00000053"> Ice Cream Cake</option><option value="00000042"> Ice Cream Cone</option><option value="00000055"> Ice Cream Sandwich</option><option value="00000043"> Mint Chocolate Milk Shake</option><option value="00000015"> Napoleon</option><option value="00000035"> Neapolitan Ice Cream</option><option value="00000029"> Oatmeal Raisin Cookies</option><option value="00000063"> Oreo Cookies</option><option value="00000020"> Peach Cobbler</option><option value="00000004"> Peanut Brittle</option><option value="00000028"> Peanut Butter Cookies</option><option value="00000011"> Peanut Butter Cups</option><option value="00000044"> Pecan Pie</option><option value="00000057"> Pecan Praline Ice Cream</option><option value="00000064"> Pop Tarts</option><option value="00000050"> Pumpkin Ice Cream</option><option value="00000048"> Pumpkin Nut Bread</option><option value="00000049"> Pumpkin Pie</option><option value="00000051"> Rhubarb Crumble</option><option value="00000062"> Shortbread Cookies</option><option value="00000045"> Smores</option><option value="00000024"> Spice Cake</option><option value="00000033"> Strawberry Shortcake</option><option value="00000002"> Sugar Cookies</option><option value="00000025"> Tapioca Pudding</option><option value="00000005"> Toasted Marshmallows</option><option value="00000027"> Vanilla Cream Pie   </option><option value="00000018"> Walnut Brownies</option></select>
 			<br />
 			<input type="submit" name="search" value="Search Products" class="button marT5" />
 			<input type="hidden" name="page" value="search" />
@@ -216,20 +65,105 @@ $maxProducts = count($products);
 		&nbsp;|&nbsp;
 		<a class="pages" href="products.html">next&gt;</a>
 			<ul>
-				<?php for($x = 0; $x < $maxProducts; $x++) {	?>
-						<li>
-							<div class="image">
-								<a href="detail.html">
-								<img src="images/<?php echo $products[$x]['link']; ?>.scale_20.JPG" alt=" <?php echo $products[$x]['title'] ?>" width="190" height="130"/>
-								</a>
-							</div>
-							<div class="detail">
-								<p class="name"><a href="detail.html"> <?php echo $products[$x]['title'] ?></a></p>
-								<p class="view"><a href="detail.html">purchase</a> | <a href="detail.html">view details >></a></p>
-							</div>
-						</li>
-				<?php } 	?>
-				
+				<li>
+					<div class="image">
+						<a href="detail.html">
+						<img src="images/167_2835774.scale_20.JPG" alt=" Ambrosia Salad" width="190" height="130"/>
+						</a>
+					</div>
+					<div class="detail">
+						<p class="name"><a href="detail.html"> Ambrosia Salad</a></p>
+						<p class="view"><a href="detail.html">purchase</a> | <a href="detail.html">view details >></a></p>
+					</div>
+				</li>
+				<li>
+					<div class="image">
+						<a href="detail.html">
+						<img src="images/167_2835774.scale_20.JPG" alt=" Apple Pie a la Mode" width="190" height="130"/>
+						</a>
+					</div>
+					<div class="detail">
+						<p class="name"><a href="detail.html"> Apple Pie a la Mode</a></p>
+						<p class="view"><a href="detail.html">purchase</a> | <a href="detail.html">view details >></a></p>
+					</div>
+				</li>
+				<li>
+					<div class="image">
+						<a href="detail.html">
+						<img src="images/430_3151480.scale_20.JPG" alt=" Apple Turnover" width="190" height="130"/>
+						</a>
+					</div>
+					<div class="detail">
+						<p class="name"><a href="detail.html"> Apple Turnover</a></p>
+						<p class="view"><a href="detail.html">purchase</a> | <a href="detail.html">view details >></a></p>
+					</div>
+				</li>
+				<li>
+					<div class="image">
+						<a href="detail.html">
+						<img src="images/430_3150132.scale_20.JPG" alt=" Baked Alaska" width="190" height="130"/>
+						</a>
+					</div>
+					<div class="detail">
+						<p class="name"><a href="detail.html"> Baked Alaska</a></p>
+						<p class="view"><a href="detail.html">purchase</a> | <a href="detail.html">view details >></a></p>
+					</div>
+				</li>
+				<li>
+					<div class="image">
+						<a href="detail.html">
+						<img src="images/700_3473780.scale_20.JPG" alt=" Baklava" width="190" height="130"/>
+						</a>
+					</div>
+					<div class="detail">
+						<p class="name"><a href="detail.html"> Baklava</a></p>
+						<p class="view"><a href="detail.html">purchase</a> | <a href="detail.html">view details >></a></p>
+					</div>
+				</li>
+				<li>
+					<div class="image">
+						<a href="detail.html">
+						<img src="images/430_3151480.scale_20.JPG" alt=" Banana Bread" width="190" height="130"/>
+						</a>
+					</div>
+					<div class="detail">
+						<p class="name"><a href="detail.html"> Banana Bread</a></p>
+						<p class="view"><a href="detail.html">purchase</a> | <a href="detail.html">view details >></a></p>
+					</div>
+				</li>
+				<li>
+					<div class="image">
+						<a href="detail.html">
+						<img src="images/430_3150132.scale_20.JPG" alt=" Banana Pudding" width="190" height="130"/>
+						</a>
+					</div>
+					<div class="detail">
+						<p class="name"><a href="detail.html"> Banana Pudding</a></p>
+						<p class="view"><a href="detail.html">purchase</a> | <a href="detail.html">view details >></a></p>
+					</div>
+				</li>
+				<li>
+					<div class="image">
+						<a href="detail.html">
+						<img src="images/167_2835774.scale_20.JPG" alt=" Banana Split" width="190" height="130"/>
+						</a>
+					</div>
+					<div class="detail">
+						<p class="name"><a href="detail.html"> Banana Split</a></p>
+						<p class="view"><a href="detail.html">purchase</a> | <a href="detail.html">view details >></a></p>
+					</div>
+				</li>
+				<li>
+					<div class="image">
+						<a href="detail.html">
+						<img src="images/167_2835774.scale_20.JPG" alt=" Black Forest Cake" width="190" height="130"/>
+						</a>
+					</div>
+					<div class="detail">
+						<p class="name"><a href="detail.html"> Black Forest Cake</a></p>
+						<p class="view"><a href="detail.html">purchase</a> | <a href="detail.html">view details >></a></p>
+					</div>
+				</li>
 		</ul>
 	</div><!-- product-list -->
 	
