@@ -141,9 +141,8 @@ $products = array(
 );
 
 $maxProducts = count($products);
-//
-$page = (isset($_GET['page'])) ? (int) $_GET['page'] : 0;
-//
+
+$page = (isset($_GET['page'])) ? (int) $_GET['page'] + 1  : 0;
 $prev = ($page == 0) ? 0 : $page - 1;
 $next = $page + 1;
 $linesPerPage =6;
