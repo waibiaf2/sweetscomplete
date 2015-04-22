@@ -34,4 +34,27 @@ class View{
 		return $output;
 		
 }
+
+
+
+	public function displayMembers($page, $linesPerPage, $maxMembers, $members){
+		
+		$offset = $page * $linesPerPage;
+		$output = '';
+		
+		 for($x = 0; $x < $linesPerPage; $x++) {
+				
+				if ($x + $offset >= $maxMembers){
+						break;
+				}
+				
+				$output .= '<tr>';
+				$output .= '<td>' . $members[$x + $offset]['user_id']  .'</td>';
+				$output .= '<td><img src="images/m.gif">' .$members[$x + $offset]['name'] .'</td>';
+				$output .='<td>' . $members[$x + $offset]['city'] . '</td>';
+				$output .= '<td><img src="images/e.gif"/>' . $members[$x + $offset]['email'] . '</td>';
+				$output .= '</tr>';
+		}
+		return $output;
+	}
 }
