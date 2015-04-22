@@ -3,29 +3,23 @@ class Products{
     
     public $products = array();
     
+    //mysql connection parameter
+    public $user = 'sweetscomplete';
+    public $dbname = 'sweetscomplete';
+    public $pass = 'password';
+    public $host = 'localhost';
+    public $dsn = '';
+    public $pdo = '';
+    public $testMode = TRUE;
+    
+    
     public function __construct(){
-        //"00000001","F1000","Fudge","Invenire percipitur eum ea, in saepe persequeris has, meis dicta albucius an vix. Utinam nonumes necessitatibus vel ne. Ad mea tacimates temporibus. Duo dicam timeam integre in. Ius an libris latine, ludus inimicus quo te, ridens scripta placerat in pri. Nec ex feugiat abhorreant.","0.10","1","95_2542284"
-        
-        $lables = array('id','sku','title','description','price','special','link');
-        $fh = fopen('./Model/products.csv','r');
-        if($fh){
-            while(!feof($fh)){
-                $row = fgetcsv($fh);
-                $tempRow = array();
-
-                if(isset($row) && is_array($row) && count($row) > 0){
-                    foreach($row as $key => $value){
-                    $tempRow[$lables[$key]] = $value;
-                     }
-                    $this->products[] = $tempRow;
-                }
-                
-            }
-        }
+      $this->dsn = sprintf('mysql:dbaname=%s;host=%s', $this->dbname, $this->host);
+      $this->pdo = new PDO($this->dsn,$this->user,$this->pass);
         
     }
     
-    public function getProducts(){
+    public function getProductsFromCsv(){
         return $this->products;
     }
     

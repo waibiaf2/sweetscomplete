@@ -1,0 +1,41 @@
+/*These were ran on the members table*/
+
+SELECT * FROM `members` WHERE `email` = 'karyn.francis@fastnet.com';
+
+INSERT INTO `members`( `name`, `address`, `city`, `state_province`, `postal_code`, `country`, `phone`, `balance`, `email`, `password`) VALUES ('TEST USER', '123 Main Street', 'New York', 'NY','10001','USA','+1 212-555-1212','0', 'test@test.com', 'password');
+
+UPDATE `members` SET 
+`address` = '228 Grand Avenue',
+`postal_code` = '10002',
+`password` = 'somethings'
+WHERE `email` = 'test@test.com'
+
+DELETE  FROM  `members` WHERE `email` = 'test@test.com'
+
+/*These were ran on the productstable*/
+
+SELECT * FROM  `products`
+ORDER BY `title`
+LIMIT 20
+OFFSET 40
+
+SELECT * FROM `products` WHERE `special` = 1
+
+SELECT COUNT(*) FROM `products`
+
+SELECT * FROM `products` 
+WHERE `title` LIKE '%chocolate%'
+
+SELECT * FROM  `members`
+JOIN `purchases`
+ON
+`members`.`user_id` = `purchases`.`user_id`
+WHERE `members`.`user_id` = 79
+
+SELECT m.name, m.email, p.*,r.title
+FROM `members` AS m
+JOIN `purchases`AS p
+ON m.user_id = p.user_id
+JOIN `products` AS r
+ON  r.product_id = p.product_id
+WHERE m.user_id = 79
