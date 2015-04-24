@@ -1,4 +1,60 @@
-<?php //some code ?>
+<?php
+
+//assign defaults
+$data = array(
+		'email' => 'email',
+		'firstname' => 'firstname',
+		'lastname' => 'lastname',
+		'address' => 'address',
+		'city' => 'city',
+		'postcode' => 'postcode',
+		'telephone' => 'telephone'	
+);
+
+//error array
+$error = array(
+		'email' => '',
+		'firstname' => '',
+		'lastname' => '',
+		'address' => '',
+		'city' => '',
+		'postcode' => '',
+		'telephone' => '',
+);
+
+if(isset($_POST['data'])){
+		
+		$data = $_POST['data'];
+		foreach($data as $key => $value){
+				$data[$key] = strip_tags($value);
+		}
+		if(!preg_match('/^[a-z][a-z0-9._-]+@(\w+\.)+[a-z]{2,6}$/i',$data['email'])){
+				$error['email'] = '<b class="error">Invalid email address</b>';
+		}
+		
+		if(!preg_match('/^[a-z0-9,.]+$/i',$data['firstname'])){
+				$error['firstname'] = '<b class="error"> Name should only containe letters, numbers, spaces "," or "."';
+		}
+		
+		if(!preg_match('/^[a-z0-9,.]+$/i',$data['lastname'])){
+				$error['lastname'] = '<b class="error"> Name should only containe letters, numbers, spaces "," or "."';
+		}
+		if(!preg_match('/[a-z0-9,.]/i',$data['address'])){
+				$error['address'] = '<b class="error"> Address should only containe letters, numbers, spaces "," or "."';
+		}
+		if(!preg_match('/[a-z0-9,.]/i',$data['city'])){
+				$error['city'] = '<b class="error"> City should only containe letters, numbers, spaces "," or "."';
+		}
+		if(!preg_match('/[a-z][0-9][a-z] [0-9]$|\^d{5}(-\d{4})?$/i',$data['postcode'])){
+				$error['postcode'] = '<b class="error"> Canadian Postcode: A9A 9A9 <br/> US Postcode: 99999 or 99999-9999</b>';
+		}
+		if(!preg_match('/^\+[0-9]{1,3} \d{3}-\d{3}-\d{4}/',$data['telephone'])){
+				$error['telephone'] = '<b class="error">Telephone numbers should be in form +CC AAA-CCC-DDDD</b>';
+		}
+		
+}
+
+?>
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -8,6 +64,11 @@
 <meta name="keywords" content="">
 <link rel="stylesheet" href="css/main.css" type="text/css">
 <link rel="shortcut icon" href="images/favicon.ico?v=2" type="image/x-icon" />
+<style>
+		.error{
+				color:red;
+		}
+</style>
 </head>
 <body>
 <div id="wrapper">
@@ -24,10 +85,10 @@
 			<br />
 			Welcome Guest		</div>
 		<ul class="topmenu">
-		<li><a href="home.html">Home</a></li>
-		<li><a href="products.html">Products</a></li>
-		<li><a href="specials.html">Specials</a></li>
-		<li><a href="contact.html">Contact Us</a></li>
+		<li><a href="index.php">Home</a></li>
+		<li><a href="products.php">Products</a></li>
+		<li><a href="specials.php">Specials</a></li>
+		<li><a href="contact.php">Contact Us</a></li>
 		</ul>
 		<br>
 		<div class="banner"><p></p></div>
@@ -42,34 +103,41 @@
 		<br/>
 		
 		<b>Please enter your information.</b><br/><br/>
-		<form>
+		<form action="addmember.php" method="post">
 			<p>
 				<label>Email: </label>
-				<input type="text" name="data[email]" />
+				<input type="text" name="data[email]" value="<?php echo htmlspecialchars($data['email']);?>"" />
+				<?php if($error['email']) echo '<p>', $error['email']; ?>
 			<p>
 			<p>
 				<label>First Name: </label>
-				<input type="text" name="data[firstname]" />
+				<input type="text" name="data[firstname]" value="<?php echo htmlspecialchars($data['firstname']);?>" />
+				<?php if($error['email']) echo '<p>', $error['firstname']; ?>
 			<p>
 			<p>
 				<label>Last Name: </label>
-				<input type="text" name="data[lastname]" />
+				<input type="text" name="data[lastname]" value="<?php echo htmlspecialchars($data['lastname']);?>" />
+				<?php if($error['email']) echo '<p>', $error['lastname']; ?>
 			<p>
 			<p>
 				<label>Address: </label>
-				<input type="text" name="data[address]" />
+				<input type="text" name="data[address]" value="<?php echo htmlspecialchars($data['address']);?>" />
+				<?php if($error['email']) echo '<p>', $error['address']; ?>
 			<p>
 			<p>
 				<label>City: </label>
-				<input type="text" name="data[city]" />
+				<input type="text" name="data[city]" value="<?php echo htmlspecialchars($data['city']);?>" />
+				<?php if($error['email']) echo '<p>', $error['city']; ?>
 			<p>
 			<p>
 				<label>Postcode: </label>
-				<input type="text" name="data[postcode]" />
+				<input type="text" name="data[postcode]" value="<?php echo htmlspecialchars($data['postcode']);?>" />
+				<?php if($error['email']) echo '<p>', $error['postcde']; ?>
 			<p>
 			<p>
 				<label>Telephone: </label>
-				<input type="text" name="data[telephone]" />
+				<input type="text" name="data[telephone]"  value="<?php echo htmlspecialchars($data['telephone']);?>"/>
+				<?php if($error['email']) echo '<p>', $error['telephone']; ?>
 			<p>
 			<p>
 				<input type="reset" name="data[clear]" value="Clear" class="button"/>
