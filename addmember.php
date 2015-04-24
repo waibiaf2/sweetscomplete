@@ -1,6 +1,8 @@
 <?php
 
 //assign defaults
+$mailStatus = '';
+
 $data = array(
 		'email' => 'email',
 		'firstname' => 'firstname',
@@ -24,33 +26,68 @@ $error = array(
 
 if(isset($_POST['data'])){
 		
-		$data = $_POST['data'];
-		foreach($data as $key => $value){
-				$data[$key] = strip_tags($value);
-		}
-		if(!preg_match('/^[a-z][a-z0-9._-]+@(\w+\.)+[a-z]{2,6}$/i',$data['email'])){
-				$error['email'] = '<b class="error">Invalid email address</b>';
-		}
+            $data = $_POST['data'];
+            foreach($data as $key => $value){
+                    $data[$key] = strip_tags($value);
+            }
+            if(!preg_match('/^[a-z][a-z0-9._-]+@(\w+\.)+[a-z]{2,6}$/i',$data['email'])){
+                    $error['email'] = '<b class="error">Invalid email address</b>';
+            }
+            
+            if(!preg_match('/^[a-z0-9,.]+$/i',$data['firstname'])){
+                    $error['firstname'] = '<b class="error"> Name should only containe letters, numbers, spaces "," or "."';
+            }
+            
+            if(!preg_match('/^[a-z0-9,.]+$/i',$data['lastname'])){
+                    $error['lastname'] = '<b class="error"> Name should only containe letters, numbers, spaces "," or "."';
+            }
+            if(!preg_match('/[a-z0-9,.]/i',$data['address'])){
+                    $error['address'] = '<b class="error"> Address should only containe letters, numbers, spaces "," or "."';
+            }
+            if(!preg_match('/[a-z0-9,.]/i',$data['city'])){
+                    $error['city'] = '<b class="error"> City should only containe letters, numbers, spaces "," or "."';
+            }
+            if(!preg_match('/[a-z][0-9][a-z] [0-9]$|\^d{5}(-\d{4})?$/i',$data['postcode'])){
+                    $error['postcode'] = '<b class="error"> Canadian Postcode: A9A 9A9 <br/> US Postcode: 99999 or 99999-9999</b>';
+            }
+            if(!preg_match('/^\+[0-9]{1,3} \d{3}-\d{3}-\d{4}/',$data['telephone'])){
+                    $error['telephone'] = '<b class="error">Telephone numbers should be in form +CC AAA-CCC-DDDD</b>'; 
+            }
+             //check to see if form valid
+            $isValid = TRUE;
+            foreach ($error as $value){
+                if($value){
+                    $isValid = FALSE;
+                    break;
+                }
+            }
+            
+            if($isValid){
+                require_once('PHPMailer/class.phpmailer.php');
+                $address = "waibiaf2@gmail.com";
+                $newName = $data['firstname'] . '' . $data['lastname'];
+                $mail = new PHPMailer(); // defaults to using php "mail()"
+                $body = 'Welcom to Sweetscomplete'. $newName . '!'
+                        .'<br/> To confirm membership just reply to this email and we\'ll do the rest.'
+                        .'<br /> Happy eating ';
+                
+                $mail->AddReplyTo($address,"SweetsComplete");
+                $mail->SetFrom($address, 'SweetsComplete');
+                $mail->AddAddress($data['email'], $newName);
+                $mail->Subject = "SweetsComplete Membership Confirmation";
+                $mail->AltBody = "To view the message, please use an HTML compatible email viewer!"; // optional, comment out and test
+                $mail->MsgHTML($body);
+                //$mail->send();
+                
+                if(!$mail->Send()) {
+                  $mailStatus = 'Maill Error: ' . $mail->ErrorInfo;
+                } else {
+                  $mailStatus = 'Confirmation Email Message sent!';
+                }
+            }
+        
+        
 		
-		if(!preg_match('/^[a-z0-9,.]+$/i',$data['firstname'])){
-				$error['firstname'] = '<b class="error"> Name should only containe letters, numbers, spaces "," or "."';
-		}
-		
-		if(!preg_match('/^[a-z0-9,.]+$/i',$data['lastname'])){
-				$error['lastname'] = '<b class="error"> Name should only containe letters, numbers, spaces "," or "."';
-		}
-		if(!preg_match('/[a-z0-9,.]/i',$data['address'])){
-				$error['address'] = '<b class="error"> Address should only containe letters, numbers, spaces "," or "."';
-		}
-		if(!preg_match('/[a-z0-9,.]/i',$data['city'])){
-				$error['city'] = '<b class="error"> City should only containe letters, numbers, spaces "," or "."';
-		}
-		if(!preg_match('/[a-z][0-9][a-z] [0-9]$|\^d{5}(-\d{4})?$/i',$data['postcode'])){
-				$error['postcode'] = '<b class="error"> Canadian Postcode: A9A 9A9 <br/> US Postcode: 99999 or 99999-9999</b>';
-		}
-		if(!preg_match('/^\+[0-9]{1,3} \d{3}-\d{3}-\d{4}/',$data['telephone'])){
-				$error['telephone'] = '<b class="error">Telephone numbers should be in form +CC AAA-CCC-DDDD</b>';
-		}
 		
 }
 
@@ -67,7 +104,11 @@ if(isset($_POST['data'])){
 <style>
 		.error{
 				color:red;
+                
 		}
+        .confirm{
+            color:green;
+        }
 </style>
 </head>
 <body>
@@ -103,6 +144,8 @@ if(isset($_POST['data'])){
 		<br/>
 		
 		<b>Please enter your information.</b><br/><br/>
+        <?php if($mailStatus) echo '<br /><b class="confirm">'. $mailStatus . '</b><br />'; ?>
+        <br />
 		<form action="addmember.php" method="post">
 			<p>
 				<label>Email: </label>
