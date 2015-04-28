@@ -42,8 +42,8 @@ $linesPerPage =6;
 		<ul class="topmenu">
 		<li><a href="index.php">Home</a></li>
 		<li><a href="products.php">Products</a></li>
-		<li><a href="specials.html">Specials</a></li>
-		<li><a href="contact.html">Contact Us</a></li>
+		<li><a href="specials.php">Specials</a></li>
+		<li><a href="contact.php">Contact Us</a></li>
 		</ul>
 		<br>
 		<div class="banner"><p></p></div>
