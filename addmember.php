@@ -10,7 +10,10 @@ $data = array(
 		'address' => 'address',
 		'city' => 'city',
 		'postcode' => 'postcode',
-		'telephone' => 'telephone'	
+		'telephone' => 'telephone',
+        'dobyear' =>0,
+        'dobmonth' =>0,
+        'dobday' => 0
 );
 
 //error array
@@ -22,6 +25,7 @@ $error = array(
 		'city' => '',
 		'postcode' => '',
 		'telephone' => '',
+        'dob' => '',
 );
 
 if(isset($_POST['data'])){
@@ -29,6 +33,22 @@ if(isset($_POST['data'])){
             $data = $_POST['data'];
             foreach($data as $key => $value){
                     $data[$key] = strip_tags($value);
+            }
+            if(isset($data['dobyear']) && isset($data['dobmonth']) && isset($data['dobday'])){
+                try{
+                    $bdatestring = sprintf('%4d-%02d-%02d',$data['dobyear'], $data['dobmonth'], $data['dobday']);
+                    $bdate = new DateTime($bdatestring);
+                    $today = new DateTime();
+                    $interval21 = new DateInterval('P21Y');
+                    $bdate21 = $today->sub($interval21);
+                    if($bdate > $bdate21) $error['dob'] = '<b class="error"> Must be at least 21 years old!</b>';
+                }catch (Exception $e){
+                    $error['dob'] = '<b class="error"> Invalid date </b>';
+                    echo $e->getMessage();
+                    exit;
+                }
+            }else{
+                $error['dob'] = '<b class="error"> Invalid date </b>';
             }
             if(!preg_match('/^[a-z][a-z0-9._-]+@(\w+\.)+[a-z]{2,6}$/i',$data['email'])){
                     $error['email'] = '<b class="error">Invalid email address</b>';
@@ -148,6 +168,34 @@ if(isset($_POST['data'])){
         <br />
 		<form action="addmember.php" method="post">
 			<p>
+                <label>Birthdate:</label>
+                <select name="datayear"]>
+                    <?php $year = date('Y'); ?>
+                    <?php for($x=$year; $x>($year-120);$x--){ ?>
+                        <option><?php echo $x; ?></option>
+                    <?php } ?>
+                </select>
+                <select name="data[dobmonth"]>
+                    <?php
+                        $month = array(1=> 'Jan','Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec');
+                        for($x=1; $x<=12; $x++){
+                            printf('<option value="%02d"> %s </option>', $x, $month[$x]);
+                            echo PHP_EOL;
+                        }
+
+                    ?>
+                </select>
+                <select name="data[dobday"]>
+                    <?php for($x =1; $x < 32; $x++){ ?>
+                        <option><?php echo $x; ?></option>
+
+                    <?php } ?>
+                </select>
+                <?php if($error['dob']) echo '<p>', $error['dob']; ?>
+            <p>
+
+            </p>
+            <p>
 				<label>Email: </label>
 				<input type="text" name="data[email]" value="<?php echo htmlspecialchars($data['email']);?>"" />
 				<?php if($error['email']) echo '<p>', $error['email']; ?>
